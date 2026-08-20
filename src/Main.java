@@ -14,13 +14,13 @@ public class Main {
     //task 2
     public static void appVersion(int clientOS, int clientDeviceYear){
         int currentYear = LocalDate.now().getYear();
-        if (clientOS == 0 && clientDeviceYear < currentYear) {
+        if (clientOS == 0 && clientDeviceYear < 2015 && clientDeviceYear <= currentYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear < currentYear) {
+        } else if (clientOS == 1 && clientDeviceYear < 2015 && clientDeviceYear <= currentYear) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (clientOS == 0 && clientDeviceYear == currentYear) {
+        } else if (clientOS == 0 && clientDeviceYear >= 2015 && clientDeviceYear <= currentYear) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear == currentYear) {
+        } else if (clientOS == 1 && clientDeviceYear >= 2015 && clientDeviceYear <= currentYear) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else {
             System.out.println("Неверно указанная ОС или год");
@@ -49,7 +49,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello and welcome!");
         vysokosnyYear(1896);
-        appVersion(0, 2025);
+        appVersion(0, 2015);
         int time = deliveryTime(40);
         System.out.println(time);
     }
